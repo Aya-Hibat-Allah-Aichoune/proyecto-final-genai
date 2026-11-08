@@ -22,7 +22,11 @@ CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", 200))
 
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "models/gemini-embedding-001")
 EMBEDDING_DIM = int(os.getenv("EMBEDDING_DIM", 768))
-LLM_MODEL = os.getenv("LLM_MODEL", "gemini-3.5-flash")
+# Modelo principal. El plan gratuito limita gemini-3.5-flash a 20 peticiones/día,
+# insuficiente para una demo; la variante lite tiene cuota mucho mayor y responde
+# bien a preguntas factuales con citas. Cambiar con LLM_MODEL=gemini-3.5-flash si se
+# dispone de cuota de pago.
+LLM_MODEL = os.getenv("LLM_MODEL", "gemini-3.1-flash-lite")
 # Modelo ligero para reescribir la pregunta con el historial: cuota por minuto
 # independiente del modelo principal, y la tarea es sencilla.
 CONDENSE_MODEL = os.getenv("CONDENSE_MODEL", "gemini-3.1-flash-lite")

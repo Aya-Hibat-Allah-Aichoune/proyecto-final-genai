@@ -133,7 +133,8 @@ def build_agent(store=None, llm: ChatGoogleGenerativeAI | None = None, k: int = 
                                 strategy="last", start_on="human")
         user_turn = (
             f"Fragmentos recuperados:\n\n{format_context(state['context'])}\n\n"
-            f"Pregunta: {state['question']}"
+            f"Pregunta: {state['question']}\n\n"
+            "(Responde en el mismo idioma en que está escrita la pregunta.)"
         )
         msgs = [SystemMessage(SYSTEM_PROMPT), *history, HumanMessage(user_turn)]
         answer = message_text(invoke_with_retry(llm, msgs)).strip()
