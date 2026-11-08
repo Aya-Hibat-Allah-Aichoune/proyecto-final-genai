@@ -34,7 +34,7 @@ La clave se lee siempre de `.env` o del entorno, nunca va en el código. `.env` 
 jupyter notebook notebooks/proyecto_final.ipynb
 ```
 
-El notebook construye la base de conocimiento la primera vez (unos 3 minutos: 352 chunks enviados en lotes de 25, porque el plan gratuito limita las peticiones de embeddings por minuto) y la reutiliza en ejecuciones posteriores desde `chroma_db/`. Se puede construir también desde terminal con `python scripts/build_kb.py` (añadir `--rebuild` para regenerarla).
+El repositorio incluye la base de conocimiento ya construida en `chroma_db/` (5,7 MB), así que el notebook y la app arrancan sin llamar a la API de embeddings. Reconstruirla (por ejemplo tras cambiar los documentos) tarda unos 3 minutos: 352 chunks enviados en lotes de 25, porque el plan gratuito limita las peticiones de embeddings por minuto. Se puede construir también desde terminal con `python scripts/build_kb.py` (añadir `--rebuild` para regenerarla).
 
 **Interfaz Streamlit (bonus):**
 
