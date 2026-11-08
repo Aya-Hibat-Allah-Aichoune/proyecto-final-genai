@@ -4,9 +4,19 @@ Ejecutar:  streamlit run app.py
 """
 from __future__ import annotations
 
+import os
 import uuid
 
 import streamlit as st
+
+# En Streamlit Community Cloud los secretos llegan por st.secrets; se copian al
+# entorno para que src/config.py los lea igual que en local (.env).
+try:
+    for _k, _v in st.secrets.items():
+        if isinstance(_v, str):
+            os.environ.setdefault(_k, _v)
+except Exception:
+    pass
 
 from src.agent import ask, build_agent
 from src.knowledge_base import build_knowledge_base, describe_collection
