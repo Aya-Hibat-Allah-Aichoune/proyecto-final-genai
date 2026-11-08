@@ -1,0 +1,12 @@
+langchain>=0.3
+langchain-google-genai>=2.1
+langchain-chroma>=0.2
+langgraph>=0.4
+chromadb>=1.0
+pypdf>=5.0
+python-dotenv>=1.0
+jupyter
+ipykernel
+ipywidgets>=8.0
+streamlit>=1.40
+pytest>=8.0
