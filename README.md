@@ -36,7 +36,7 @@ jupyter notebook notebooks/proyecto_final.ipynb
 
 El repositorio incluye la base de conocimiento ya construida en `chroma_db/` (5,7 MB), así que el notebook y la app arrancan sin llamar a la API de embeddings. Reconstruirla (por ejemplo tras cambiar los documentos) tarda unos 3 minutos: 352 chunks enviados en lotes de 25, porque el plan gratuito limita las peticiones de embeddings por minuto. Se puede construir también desde terminal con `python scripts/build_kb.py` (añadir `--rebuild` para regenerarla).
 
-**Interfaz Streamlit (bonus):**
+**Interfaz Streamlit (bonus):** desplegada en Streamlit Community Cloud en https://asistente-teledeteccion-agricola.streamlit.app (la clave de Gemini va en los *secrets* de la app, no en el repo). En local:
 
 ```bash
 streamlit run app.py
